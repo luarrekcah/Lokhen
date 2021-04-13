@@ -1,6 +1,8 @@
 # Lokhen, bot para o Twitter
 Primeira proposta é postar imagens Neko aleatórias todos os dias, porém, lógica não finalizada
 
+# Siga no [Twitter](https://twitter.com/_luarrekcah/)
+
 [Site](https://luarrekcah.glitch.me/) do desenvolvedor
 
 Entre no nosso [servidor](https://discord.gg/XKHcPa4fde) do Discord!
