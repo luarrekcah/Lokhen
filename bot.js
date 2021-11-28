@@ -55,7 +55,7 @@ process.on("UnhandledPromiseRejectionWarning", () => {
 //<=== Erros
 
 //Iniciar ===>
-var twt = new twit(configTwit);
+const twt = new twit(configTwit);
 console.log("Online");
 //<=== Iniciar
 
@@ -72,7 +72,7 @@ async function twtRandomNeko() {
   const imgLink = "https://cdn.nekos.life/neko/neko_093.jpg";
   console.log(imgLink);
 
-  var download = function(uri, filename, callback) {
+  const download = function(uri, filename, callback) {
     request.head(uri, function(err, res, body) {
       console.log("content-type:", res.headers["content-type"]);
       console.log("content-length:", res.headers["content-length"]);
@@ -88,7 +88,7 @@ async function twtRandomNeko() {
   });
 
   try {
-    var b64content = await fs.readFileSync("./images/neko.jpg", {
+    const b64content = await fs.readFileSync("./images/neko.jpg", {
       encoding: "base64"
     });
   } catch (e) {
@@ -102,9 +102,9 @@ async function twtRandomNeko() {
   ) {
     console.log(data);
     
-    var mediaIdStr = data.media_id_string;
-    var altText = "Imagem neko";
-    var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } };
+    const mediaIdStr = data.media_id_string;
+    const altText = "Imagem neko";
+    const meta_params = { media_id: mediaIdStr, alt_text: { text: altText } };
 
     twt.post("media/metadata/create", meta_params, function(
       err,
@@ -127,7 +127,6 @@ async function twtRandomNeko() {
 }
 twtRandomNeko();
 
-//Random neko
 setInterval(() => {
   //twtRandomNeko();
 }, config.intervals.neko);
