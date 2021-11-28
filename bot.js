@@ -1,9 +1,9 @@
 /*
- * Script by Luar Rekcah
+ * @author Script by Luar Rekcah
  *
- * Follow me on Twitter: @_luarrekcah
+ * @twitter Follow me on Twitter: @_luarrekcah
  *
- * website: https://luarrekcah.glitch.me
+ * @website website: https://luarrekcah.glitch.me
  */
 
 //Constantes ===>
