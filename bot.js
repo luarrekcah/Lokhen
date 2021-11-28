@@ -60,26 +60,17 @@ console.log("Online");
 //<=== Iniciar
 
 // Restante do script
-/*
-twt.post(
-  "statuses/update",
-  {
-    status: "tst"
-  },
-  function(err, data, response) {
-    console.log(data);
-  }
-);
-*/
+
+//         ===> twtRandomNeko() não finalizado <===
 
 async function twtRandomNeko() {
   const id = crypto.randomBytes(16).toString("hex");
   const arq = `./images/neko${id}.jpg`;
 
   const body = await superagent.get("https://nekos.life/api/neko");
-  //const imgLink = body.neko;
+
   const imgLink = "https://cdn.nekos.life/neko/neko_093.jpg";
-  console.log(imgLink); //Ok, link certinho da imagem
+  console.log(imgLink);
 
   var download = function(uri, filename, callback) {
     request.head(uri, function(err, res, body) {
@@ -110,8 +101,7 @@ async function twtRandomNeko() {
     response
   ) {
     console.log(data);
-    // now we can assign alt text to the media, for use by screen readers and
-    // other text-based presentations and interpreters
+    
     var mediaIdStr = data.media_id_string;
     var altText = "Imagem neko";
     var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } };
@@ -122,7 +112,7 @@ async function twtRandomNeko() {
       response
     ) {
       if (!err) {
-        // now we can reference the media and post a tweet (media will attach to the tweet)
+       
         var params = { status: "Neko ^-^", media_ids: [mediaIdStr] };
 
         twt.post("statuses/update", params, function(err, data, response) {
@@ -141,35 +131,3 @@ twtRandomNeko();
 setInterval(() => {
   //twtRandomNeko();
 }, config.intervals.neko);
-
-/*
-twt.post(
-  "statuses/update",
-  {
-    status: "tst"
-  },
-  function(err, data, response) {
-    console.log(data);
-  }
-);
-*/
-/*
-const arr = [
-  "teste / 12:30"
-];
-
-var j = schedule.scheduleJob(
-  { hour: 12, minute: 30 , dayOfWeek: 0  },
-  function() {
-    twt.post(
-      "statuses/update",
-      {
-        status: randomItem(arr)
-      },
-      function(err, data, response) {
-        console.log(data);
-      }
-    );
-  }
-);
-*/
