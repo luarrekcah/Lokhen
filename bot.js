@@ -7,16 +7,16 @@
  */
 
 //Constantes ===>
-const twit = require("twit");
-const randomItem = require("random-item");
-const schedule = require("node-schedule");
-const express = require("express");
-const app = express();
-const http = require("http");
-const superagent = require("superagent");
-const fs = require("fs");
-const request = require("request");
-const crypto = require("crypto");
+const twit = require("twit"),
+ randomItem = require("random-item"),
+ schedule = require("node-schedule"),
+ express = require("express"),
+ app = express(),
+ http = require("http"),
+ superagent = require("superagent"),
+ fs = require("fs"),
+ request = require("request"),
+ crypto = require("crypto")
 //<=== Constantes
 
 //Sistema de ping ===>
